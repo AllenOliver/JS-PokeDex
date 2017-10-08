@@ -1,0 +1,68 @@
+body {
+	background: url("../img/pokemonBG2.gif") no-repeat center center fixed;
+	 -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+	background-color: #2C3E50;
+	background-attachment: fixed;
+	color: white;
+	padding-top: 50px;
+	padding-bottom: 70px; 
+
+}
+
+
+#panelPokemon{
+	color: black;
+	opacity: 0.9;
+	padding-bottom:40px;
+}
+
+
+.footer {
+   height: 50px; 
+    line-height: 50px;
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0; 
+    top:40px;
+	background-color: #212529;
+	
+  margin-top: -50px;  
+  
+  clear:both;
+  
+    
+    
+    
+}
+
+@media screen and (max-width: 900px) {
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  
+    line-height: 60px;
+	background-color: #212529;
+	
+	 
+    left: 0;
+    height: 80px;
+    overflow:hidden;
+    
+}
+
+body {
+	background: url("../img/Pokemon_RBY_PalletTown.png") no-repeat center center fixed;
+	background-size:100% 90%;
+}
+
+#panelPokemon{
+	color: black;
+	opacity: 1.0;
+	padding-bottom:40px;
+}
+}

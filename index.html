@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Allen Oliver - PokeDex</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/pokemonStyles.css" rel="stylesheet" type="text/css" />
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script type="text/javascript" src="js/pokedexScript.js"></script>
+
+		<link href="https://cdn.iconscout.com/public/images/icon/free/png-512/pokemon-pokeball-pikachu-thunder-electric-shock-32a148433870f0aa-512x512.png" rel="icon" />
+
+<script>
+		//enable Tooltips
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip(); 
+		
+		});
+		$("#error").alert('close');
+		
+</script>
+</head>
+
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+		<div class="container"><!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header"><a class="navbar-brand" href="#">The Web PokeDex <span><img src="http://thefreecheese.com/wp-content/uploads/2016/06/trainer-pikachu-gif.gif" height="24px" width="36px"></span></a></div>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="nav navbar-nav">
+					</ul>	
+				</div>
+			</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+	
+
+			<div align="center" class="col-lg-12" name="topOfPage">
+				<h3>  </h3>
+			</div>
+		</div>
+
+		<div align="center" class="col-lg-12">
+			<div class="col-md-2">
+				<p></p>
+			</div>
+		<div class="col-md-8">
+			<div class="row">
+<div class="panel panel-primary" id="panelPokemon">
+<div class="panel-heading">The Web PokeDex <img src="http://img27.laughinggif.com/pic/HTTP3BhMS5uYXJ2aWkuY29tLzYwNDgvYTBlZjg2NjUyM2FlMzIzZWM3MjljY2Q3MzI1ZjgxYjQxZGM1NTQ4OF9ocS5naWYlog.gif" height="40px" width="60px"></div>
+
+<div class="panel-body">
+<div class="form-group text-left" id="pokeform">
+
+<form id="pokeform">
+<div class="col-md-12"><label for="pokemonTextBox">Input a <strong>Pokemon</strong> :</label> 
+<div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="submit" id="submitButton" name="submitButton" onclick="PokemonSearch()">Go!</button>
+      </span>
+<input type="text" class="form-control" id="pokemonSelect" name="pokemonSelect" placeholder="Pokemon name">
+
+</div>
+
+									
+									
+									</div>
+
+
+<div class="row">
+<div class="col-md-12">
+<div class="form-group text-center"><br/>
+<button class="btn btn-primary" id="submitButton" name="submitButton" onclick="PokemonSearch()" type="submit"><span><img class="img img-responsive" style="float:right" src="https://maxcdn.icons8.com/Share/icon/Gaming//pokeball1600.png" height="18px" width="18px"></span>Submit</button>
+<a data-toggle="tooltip" href="#" title="Click to clear the document!"><button class="btn btn-primary" id="clearButton" name="clearButton" onclick="clearPage()" type="submit" value="Clear" ><span><img class="img img-responsive" style="float:right" src="https://maxcdn.icons8.com/Share/icon/Gaming//pokeball1600.png" height="18px" width="18px"></span>Clear</button></a>
+
+</div>
+</div>
+</div>
+</form>
+<div id="pokemonNameContainer" class="text-center"><label for="pokemonName">Name:</label><div id="pokemonName"></div></div>
+
+<div id="pokemonSprite">
+<div class="row">
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-5">
+		<div class="text-center"><label for="pokeimage">Regular:</label></div>
+		<div align="center"><img class="img img-responsive"  id="pokeimage"/></div>
+	</div>
+	<div class="col-md-5">
+	<div class="text-center">	<label for="pokeimage_Shiny">Shiny:</label></div>
+	<div align="center">	<img class="img img-responsive" id="pokeimage_Shiny"/></div>
+	</div>	
+	<div class="col-md-1">
+	</div>	
+</div>
+<div class="row">
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-5">
+		<div class="text-center"><label for="type" >Type 1:</label></div>
+		<div id="type" class="text-center"></div>
+	</div>
+	<div class="col-md-5">
+	<div class="text-center"><label for="type2" >Type 2:</label></div>
+		<div id="type2" class="text-center"></div>
+	</div>	
+	<div class="col-md-1">
+	</div>	
+</div>
+<div class="row" style="padding-bottom: 20px;">
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-10">
+		<div class="text-center"><label for="type">Description:</label></div>
+		<div id="desc"></div>
+	</div>
+	<div class="col-md-1">
+	</div>	
+</div>
+</div>
+
+</div>
+</div>
+</div>
+			<div id="error" >
+				
+			</div>
+</div>
+		
+		<div class="col-md-2">
+			<p></p>
+		</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+
+
+<div class="navbar navbar-fixed-bottom">
+    	    	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div align="center">
+					<div class="col-md-6">
+						<span class="text-muted pull-left">Created by <a href="http://www.aribaa.com" target="_blank">Allen Oliver</a></span>&nbsp;
+					</div>
+					<div class="col-md-6">
+						<span class="text-muted pull-left">Pokemon Data courtesy of <a href="https://pokeapi.co/">Pokéapi v<sup>2</sup>.</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+</body>
+
+
+</html>
